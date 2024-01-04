@@ -1,78 +1,100 @@
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
-
-import javax.swing.*;
-import javax.swing.text.html.Option;
-import java.time.Duration;
-import java.util.Set;
+import Pages.FollowUs.FollowUsPage;
+import Pages.Login.LoginPage;
+import Pages.Register.RegisterPage;
+import Pages.Search.SearchPage;
+import Pages.ShoppingCard.ShoppingPage;
+import Pages.WishList.WishListPage;
+import Pages.Productes.ProductesPage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 public class HomePage {
 
-    public static void main(String[] args) throws InterruptedException {
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        //   driver.get("https://the-internet.herokuapp.com/drag_and_drop");
-//        driver.findElement(By.className("radius")).click();
-        //                         clickAndHold
-    /*
-        WebElement A = driver.findElement(By.id("column-a"));
-        WebElement B = driver.findElement(By.id("column-b"));
-        Actions dropdown = new Actions(driver);
-        dropdown.clickAndHold(A).moveToElement(B).release().build().perform();
+    private WebDriver driver;
+    public HomePage(WebDriver driver) {
+        this.driver = driver;
+   }
+    private final By registerBtn = By.className("ico-register");
+    private final By loginBtn = By.className("ico-login");
+    private final By wishlistBtn = By.className("ico-wishlist");
+    private final By shoppingcard = By.className("ico-cart");
+    private final By searchBox = By.xpath("//input[contains(@class,'search-box')]");
+    private final By searchBtn = By.xpath("//*[@id=\"small-search-box-form\"]/button");
+    private final By topMenu = By.xpath("//*[@class='top-menu notmobile']");
+    private final By computers = By.partialLinkText("Computers");
+    private final By welcomeMess = By.xpath("//div[@class='topic-block-title']//h2");
+    private final By productTitle = By.partialLinkText("Build your own computer");
+    private final By addToCardBtn1 =By.xpath("//div[@data-productid='1']//button[contains(@class, 'add-to-cart')]");
+    private final By addToCardBtn2 =By.xpath("//div[@data-productid='4']//button[contains(@class, 'add-to-cart')]");
+    private final By addToCardBtn3 =By.xpath("//div[@data-productid='18']//button[contains(@class, 'add-to-cart')]");
+    private final By addToCardBtn4 =By.xpath("//div[@data-productid='43']//button[contains(@class, 'add-to-cart')]");
+    private final By addToWishBtu1 = By.xpath("//div[@data-productid='1']//button[contains(@class, 'add-to-wishlist')]");
+    private final By addToWishBtu2 = By.xpath("//div[@data-productid='4']//button[contains(@class, 'add-to-wishlist')]");
+    private final By addToWishBtu3 = By.xpath("//div[@data-productid='18']//button[contains(@class, 'add-to-wishlist')]");
+    private final By addToWishBtu4 = By.xpath("//div[@data-productid='43']//button[contains(@class, 'add-to-wishlist')]");
+    private final By faceBookBtn = By.className("facebook");
+    private final By twitterBtu = By.className("twitter");
+    private final By youtubeBtu =By.className("youtube");
 
-     */
+   public RegisterPage clickRegisterBtu() {
+   driver.findElement(registerBtn).click();
+   return new RegisterPage(driver);
 
-        ///                       WindowHandles /  switchTo().window
-/*
-        driver.get("https://the-internet.herokuapp.com/windows");
-        System.out.println(driver.getWindowHandle());
-        String main = driver.getWindowHandle();
-        driver.findElement(By.partialLinkText("Selenium")).click();
+   }
+  public LoginPage clickLoginBtu() {
+    driver.findElement(loginBtn).click();
+   return new LoginPage(driver);
 
-        Set<String> allwindows = driver.getWindowHandles();    // main + new windows
-        for (String s : allwindows) //2
-        {
-            if(!s.equals(main))    // (!s.equals(main))     !s mains not equal main
-                driver.switchTo().window(s);
-        }
-        System.out.println(driver.getTitle());
-        driver.switchTo().window(main);
-        System.out.println(driver.getTitle());
-        driver.findElement(By.partialLinkText("Selenium")).click();
- */
-        ///                     Frames
-/*
-        driver.get("https://the-internet.herokuapp.com/nested_frames");
-        driver.switchTo().frame("frame-top");
-        driver.switchTo().frame("frame-middle");
-        driver.switchTo().parentFrame();
-        driver.switchTo().frame("frame-left");
-        System.out.println(driver.findElement(By.xpath("/html/body")).getText());
-*/
-        //                      frame set
-        /*
-        driver.get("https://the-internet.herokuapp.com/iframe");
-        driver.switchTo().frame("mce_0_ifr");
-       driver.findElement(By.xpath("//*[@id='tinymce']")).sendKeys("ahmed");
-       driver.switchTo().parentFrame();
-        System.out.println(driver.getTitle());
-          */
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-        driver.get("https://the-internet.herokuapp.com/context_menu");
-        //driver.findElement(By.className("prompt")).click();
-        WebElement rightclick = driver.findElement(By.id("hot-spot"));
-        Actions actions = new Actions(driver);
-        actions.contextClick(rightclick).perform();
-        Thread.sleep(2000);
-       // driver.switchTo().alert().sendKeys("ahmed");
-       driver.switchTo().alert().accept();
-
-        //driver.quit();
     }
+   public WishListPage clickWishListBtu(){
+  driver.findElement(wishlistBtn).click();
+  return new WishListPage(driver);
+   }
+   public ShoppingPage clickshoppingcard(){
+   driver.findElement(shoppingcard).click();
+   return new ShoppingPage(driver);
+   }
+    public SearchPage searchBoxInput(String input){
+     driver.findElement(searchBox).sendKeys(input);
+        return new SearchPage(driver);
+    }
+   public SearchPage clicksearchBtu(){
+  driver.findElement(searchBtn).click();
+   return new SearchPage(driver);
+   }
+   public String getWelcomMess(){
+       return driver.findElement(welcomeMess).getText();
+   }
+    public ProductesPage clickproductTitle(){
+        driver.findElement(productTitle).click();
+        return new ProductesPage(driver);
+    }
+    public ProductesPage AddProducte1ToCard(){
+        driver.findElement(addToCardBtn1).click();
+        return new ProductesPage(driver);
+    }
+    public ProductesPage AddProduct1ToWishBtu(){
+        driver.findElement(addToWishBtu1).click();
+        return new ProductesPage(driver);
+    }
+    public FollowUsPage Facebook(){
+        driver.findElement(faceBookBtn).click();
+        return new FollowUsPage(driver);
+    }
+    public FollowUsPage Twitter(){
+        driver.findElement(twitterBtu).click();
+        return new FollowUsPage(driver);
+    }
+    public FollowUsPage Youtub(){
+        driver.findElement(youtubeBtu).click();
+        return new FollowUsPage(driver);
+    }
+
+
+
+
+
+
 
 
 }
