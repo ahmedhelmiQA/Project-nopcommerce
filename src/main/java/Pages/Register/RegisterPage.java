@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class RegisterPage {
+public class RegisterPage  {
     private WebDriver driver;
     public RegisterPage(WebDriver driver) {
         this.driver = driver;
@@ -24,6 +24,19 @@ public class RegisterPage {
     private final By confPasswordField = By.id("ConfirmPassword");
     private final By registerBtu = By.id("register-button");
 
+
+    public void fillRegisterInfoMale(String firstName, String lastName, String day, String month, String year,
+                                     String email, String password, String confPassword){
+   driver.findElement(genderMale).click();
+   driver.findElement(firstNameField).sendKeys(firstName);
+   driver.findElement(lastNameField).sendKeys(lastName);
+   selectBirthInfo(day,month,year);
+   driver.findElement(mailAdress).sendKeys(email);
+   driver.findElement(passwordField).sendKeys(password);
+   driver.findElement(confPasswordField).sendKeys(confPassword);
+
+    }
+
     private void selectBirthInfo(String day, String month, String year) {
         WebElement dayelement = driver.findElement(birthDayField);
         Select select = new Select(dayelement);
@@ -37,19 +50,6 @@ public class RegisterPage {
         select = new Select(yearelment);
         select.selectByValue(year);
     }
-    public void fillRegisterInfoMale(String firstName, String lastName, String day, String month, String year,
-                                     String email, String password, String confPassword){
-   driver.findElement(genderMale).click();
-   driver.findElement(firstNameField).sendKeys(firstName);
-   driver.findElement(lastNameField).sendKeys(lastName);
-   selectBirthInfo(day,month,year);
-   driver.findElement(mailAdress).sendKeys(email);
-   driver.findElement(passwordField).sendKeys(password);
-   driver.findElement(confPasswordField).sendKeys(confPassword);
-
-    }
-
-
 
     public void fillRegisterInfoFemale(String firstName, String lastName, String day, String month,
                                        String year, String mail, String password, String confpassword){
@@ -64,6 +64,15 @@ public class RegisterPage {
     public void ClickRegisterBtu(){
     driver.findElement(registerBtu).click();
 
+    }
+    private final By continueBtu = By.xpath("//a[contains(@class,'continue-button')]");
+    private final By registerMess = By.xpath("//div[@class='result']");
+
+    public String getResultMess(){
+        return driver.findElement(registerMess).getText();
+    }
+    public void clickContinueBtu() {
+        driver.findElement(continueBtu).click();
     }
 
 }

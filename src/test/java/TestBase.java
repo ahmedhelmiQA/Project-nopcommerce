@@ -8,15 +8,16 @@ public class TestBase {
 
 
     @BeforeClass
-    public void address(){
+    public void address() throws InterruptedException {
         driver = new ChromeDriver();
         driver.get("https://demo.nopcommerce.com");
         driver.manage().window().maximize();
+        //Thread.sleep(5000);
         //homePage = new HomePage(driver);
     }
 
-//    @AfterClass
-//    public void Quite(){
-//        driver.quit();
-//    }
+    @AfterClass
+    public void Quite(){
+        driver.quit();
+    }
 }
