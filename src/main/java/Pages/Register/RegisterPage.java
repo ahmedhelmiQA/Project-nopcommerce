@@ -1,7 +1,6 @@
 package Pages.Register;
 
 
-import Utilities.PageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,6 +22,8 @@ public class RegisterPage  {
    private final By passwordField = By.id("Password");
     private final By confPasswordField = By.id("ConfirmPassword");
     private final By registerBtu = By.id("register-button");
+    private final By continueBtu = By.xpath("//a[contains(@class,'continue-button')]");
+    private final By registerMess = By.xpath("//*[@class='topic-block-title']/h2");
 
 
     public void fillRegisterInfoMale(String firstName, String lastName, String day, String month, String year,
@@ -65,12 +66,10 @@ public class RegisterPage  {
     driver.findElement(registerBtu).click();
 
     }
-    private final By continueBtu = By.xpath("//a[contains(@class,'continue-button')]");
-    private final By registerMess = By.xpath("//div[@class='result']");
 
     public String getResultMess(){
-        return driver.findElement(registerMess).getText();
-    }
+     return    driver.findElement(registerMess).getText();
+      }
     public void clickContinueBtu() {
         driver.findElement(continueBtu).click();
     }

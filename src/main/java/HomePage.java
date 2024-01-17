@@ -69,7 +69,7 @@ public class HomePage {
         driver.findElement(productTitle).click();
         return new ProductesPage(driver);
     }
-    public ProductesPage AddProducte1ToCard(){
+    public ProductesPage AddProducte1ToCardBtu(){
         driver.findElement(addToCardBtn1).click();
         return new ProductesPage(driver);
     }

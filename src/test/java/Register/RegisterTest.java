@@ -12,8 +12,12 @@ private RegisterPage registerPage;
     homePage = new HomePage(driver);
   registerPage = homePage.clickRegisterBtu();
   registerPage.fillRegisterInfoMale("ahmed","helmi","13","1","1980",
-          "test@dex.net","123456","123456");
+          "dex1@dev.net","123456","123456");
   registerPage.ClickRegisterBtu();
+  registerPage.clickContinueBtu();
+  String expectedResult = "Welcome to our store";
+  String actualResult = registerPage.getResultMess();
+  Assert.assertEquals(actualResult,expectedResult);
 
 
 }

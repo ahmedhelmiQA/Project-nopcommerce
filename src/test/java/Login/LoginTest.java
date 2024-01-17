@@ -11,9 +11,9 @@ public class LoginTest extends TestBase{
     public void loginMaleTest(){
         homePage = new HomePage(driver);
         loginPage = homePage.clickLoginBtu();
-        loginPage.fillLoginInfo("test@dex.net","123456");
+        loginPage.fillLoginInfo("dex@dex.net","123456");
         loginPage.clickLoginBtu();
-        String expectedResult = "Welcom";
+        String expectedResult = "Welcome to our store";
         String actualResult = loginPage.WelcomeMess();
         Assert.assertEquals(actualResult,expectedResult,"Login was unsuccessful");
 
