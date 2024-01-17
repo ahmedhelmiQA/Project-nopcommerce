@@ -1,5 +1,5 @@
+import BaseTest.TestBase;
 import Pages.Register.RegisterPage;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,7 +12,7 @@ private RegisterPage registerPage;
     homePage = new HomePage(driver);
   registerPage = homePage.clickRegisterBtu();
   registerPage.fillRegisterInfoMale("ahmed","helmi","13","1","1980",
-          "dex1@dev.net","123456","123456");
+          "dex1@dav.net","123456","123456");
   registerPage.ClickRegisterBtu();
   registerPage.clickContinueBtu();
   String expectedResult = "Welcome to our store";
@@ -27,10 +27,10 @@ private RegisterPage registerPage;
     homePage = new HomePage(driver);
     registerPage = homePage.clickRegisterBtu();
     registerPage.fillRegisterInfoFemale("sara","mohamed","26","12","2021",
-            "sara@fa.cm","123456","123456");
+            "sar@sar.cm","123456","123456");
     registerPage.ClickRegisterBtu();
     registerPage.clickContinueBtu();
-    String expectedResult = "Your registration notcompleted";
+    String expectedResult = "Welcome to our store";
     String actualResult = homePage.getWelcomMess();
     Assert.assertEquals(actualResult,expectedResult,"the message is incorrect");
 }

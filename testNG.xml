@@ -5,14 +5,15 @@
         <classes>
             <class name="RegisterTest">
                 <methods>
-                    <include name="RegisterMaleTest"/>
+                    <include name="RegisterFemaleTest"/>
                 </methods>
             </class>
             <class name="LoginTest">
                 <methods>
-                    <include name="loginMaleTest"/>
+                    <include name="LoginFelmalTest"/>
                 </methods>
             </class>
+
         </classes>
     </test>
 </suite>

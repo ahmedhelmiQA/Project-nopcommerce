@@ -14,12 +14,13 @@ public class LoginPage{
     private final By passwordField = By.id("Password");
     private final By loginBtu = By.xpath("//div/button[@type='submit']");
 
-    public String WelcomeMess(){
-      return   driver.findElement(welcomeMessage).getText();
-    }
+
     public void fillLoginInfo(String mail, String password){
     driver.findElement(emailField).sendKeys(mail);
     driver.findElement(passwordField).sendKeys(password);
+    }
+    public String getMessageWel(){
+        return driver.findElement(welcomeMessage).getText();
     }
     public void clickLoginBtu (){
         driver.findElement(loginBtu).click();

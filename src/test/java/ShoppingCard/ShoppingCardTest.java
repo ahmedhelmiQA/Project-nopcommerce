@@ -1,4 +1,6 @@
 package ShoppingCard;
 
-public class ShoppingCardTest {
+import BaseTest.TestBase;
+
+public class ShoppingCardTest extends TestBase {
 }
