@@ -16,6 +16,7 @@ public class TestBase {
         driver = new ChromeDriver();
         driver.get("https://demo.nopcommerce.com");
         driver.manage().window().maximize();
+        homePage = new HomePage(driver);
         //Thread.sleep(5000);
         //homePage = new HomePage(driver);
     }
