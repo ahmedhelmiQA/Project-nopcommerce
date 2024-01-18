@@ -1,9 +1,6 @@
 package BaseTest;
-
-import Pages.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public class TestBase {
@@ -16,6 +13,7 @@ public class TestBase {
         driver = new ChromeDriver();
         driver.get("https://demo.nopcommerce.com");
         driver.manage().window().maximize();
+
         //Thread.sleep(5000);
         //homePage = new HomePage(driver);
     }
