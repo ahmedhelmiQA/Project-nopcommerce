@@ -1,4 +1,3 @@
-import BaseTest.TestBase;
 import Pages.Register.RegisterPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
