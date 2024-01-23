@@ -11,7 +11,7 @@ private RegisterPage registerPage;
     homePage = new HomePage(driver);
   registerPage = homePage.clickRegisterBtu();
   registerPage.fillRegisterInfoMale("ahmed","helmi","13","1","1980",
-          "dex1@dav.net","123456","123456");
+          "dex1@vav.net","123456789","123456");
   registerPage.ClickRegisterBtu();
   registerPage.clickContinueBtu();
   String expectedResult = "Welcome to our store";
@@ -26,7 +26,7 @@ private RegisterPage registerPage;
     homePage = new HomePage(driver);
     registerPage = homePage.clickRegisterBtu();
     registerPage.fillRegisterInfoFemale("sara","mohamed","26","12","2021",
-            "sar@sar.cm","123456","123456");
+            "sar@vvr.cm","123456","123456");
     registerPage.ClickRegisterBtu();
     registerPage.clickContinueBtu();
     String expectedResult = "Welcome to our store";

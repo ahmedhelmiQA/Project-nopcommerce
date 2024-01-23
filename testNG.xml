@@ -13,6 +13,11 @@
                     <include name="LoginFelmalTest"/>
                 </methods>
             </class>
+            <class name="SearchTest">
+                <methods>
+                    <include name="SearchTestContianeWord"/>
+                </methods>
+            </class>
 
         </classes>
     </test>

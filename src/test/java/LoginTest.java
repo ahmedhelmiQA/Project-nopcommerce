@@ -11,7 +11,7 @@ public class LoginTest extends TestBase {
     public void loginMaleTest(){
         homePage = new HomePage(driver);
         loginPage = homePage.clickLoginBtu();
-        loginPage.fillLoginInfo("dex1@dv.net","123456");
+        loginPage.fillLoginInfo("sar@vvr.cm","123456");
         loginPage.clickLoginBtu();
         String expectedResult = "Welcome to our store";
         String actualResult = loginPage.getMessageWel();

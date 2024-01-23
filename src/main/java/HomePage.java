@@ -12,7 +12,7 @@ public class HomePage {
 
     private WebDriver driver;
     public HomePage(WebDriver driver) {
-        this.driver = driver;
+       this.driver = driver;
    }
     private final By registerBtn = By.className("ico-register");
     private final By loginBtn = By.className("ico-login");

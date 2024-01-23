@@ -1,4 +1,5 @@
 import Pages.Search.SearchPage;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class SearchTest extends TestBase {
@@ -8,12 +9,12 @@ public class SearchTest extends TestBase {
 
     @Test
     public void SearchTestContianeWord(){
-        String search = "bracelet";
-        homePage= new HomePage(driver);
-
-
-
-
-
+        String search = "Build";
+        homePage = new HomePage(driver);
+       homePage.searchBoxInput(search);
+       homePage.clicksearchBtu();
+        searchPage = new SearchPage(driver);
+       searchPage.ProductDetails();
     }
+
 }
