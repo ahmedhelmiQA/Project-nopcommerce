@@ -13,22 +13,16 @@ public class ProductesPage {
     public ProductesPage(WebDriver driver) {
         this.driver = driver;
     }
-
-    public class ProductesPag {
-        private WebDriver driver;
-        public ProductesPag(WebDriver driver) {
-            this.driver = driver;
-        }
-        private final By processorList = By.id("product_attribute_1");
+       private final By processorList = By.id("product_attribute_1");
         private final By ramList = By.id("product_attribute_2");
         private final By hddCheckBox = By.id("product_attribute_3_6");
         private final By OsCheckBox = By.id("product_attribute_4_9");
         private final By SoftwareCheckBox = By.id("product_attribute_5_11");
         private final By enteredQuantity = By.className("qty-input");
         private final By addCardBtu = By.id("add-to-cart-button-1");
-        private final By successMess = By.xpath("//*[@class='bar-notification success']/p");
+    private final By successMsg = By.xpath("//div[@class=\"bar-notification success\"]//p");
         private final By addWishListBtu= By.id("add-to-wishlist-button-1");
-        private final By closeMess = By.id("bar-notification");
+        private final By closeMess = By.xpath("//span[@class='close']");
         // private final By compareListBtu = By.xpath("//*[@class='compare-products']/button");
 
 
@@ -48,7 +42,7 @@ public class ProductesPage {
             return new ShoppingPage(driver);
         }
         public String getSuccessMess(){
-            return driver.findElement(successMess).getText();
+            return driver.findElement(successMsg).getText();
         }
         public void clickCloseMess(){
             driver.findElement(closeMess).click();
@@ -62,5 +56,5 @@ public class ProductesPage {
             Select select = new Select(process);
             select.selectByValue("2");
         }
-    }
+
 }

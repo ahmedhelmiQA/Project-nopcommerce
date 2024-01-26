@@ -18,6 +18,11 @@
                     <include name="SearchTestContianeWord"/>
                 </methods>
             </class>
+            <class name="ShoppingCardTest">
+                <methods>
+                    <include name="testAddingItemAndCheckingCount"/>
+                </methods>
+            </class>
 
         </classes>
     </test>
