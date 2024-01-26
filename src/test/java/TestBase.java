@@ -16,8 +16,8 @@ public class TestBase {
         //homePage = new HomePage(driver);
     }
 
-//    @AfterClass
-//    public void Quite(){
-//        driver.quit();
-//    }
+    @AfterClass
+    public void Quite(){
+        driver.quit();
+    }
 }

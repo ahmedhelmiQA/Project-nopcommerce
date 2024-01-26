@@ -23,6 +23,10 @@ public class ProductesPage {
     private final By successMsg = By.xpath("//div[@class=\"bar-notification success\"]//p");
         private final By addWishListBtu= By.id("add-to-wishlist-button-1");
         private final By closeMess = By.xpath("//span[@class='close']");
+        private  final  By wishItemQuantity = By.xpath("//span[@class='wishlist-qty']");
+        private final By cardItemQuantity = By.xpath("//span[@class='cart-qty']");
+        private final By wishlistPageBtu = By.xpath("//span[@class='wishlist-label']");
+        private final By cardPageButton = By.xpath("//span[@class='cart-label']");
         // private final By compareListBtu = By.xpath("//*[@class='compare-products']/button");
 
 
@@ -34,27 +38,43 @@ public class ProductesPage {
             driver.findElement(OsCheckBox).click();
             driver.findElement(SoftwareCheckBox).click();
         }
+        public void SelectProcess(){
+          WebElement process = driver.findElement(processorList);
+          Select select = new Select(process);
+          select.selectByValue("2");
+        }
         public void EnteredQuantity(){
             driver.findElement(enteredQuantity).click();
         }
-        public ShoppingPage ClickAddCardBtu(){
+        public void ClickAddCardBtu(){
             driver.findElement(addCardBtu).click();
-            return new ShoppingPage(driver);
-        }
+       }
         public String getSuccessMess(){
             return driver.findElement(successMsg).getText();
         }
         public void clickCloseMess(){
             driver.findElement(closeMess).click();
         }
-        public WishListPage ClickAddWishList(){
+        public void ClickAddWishList(){
             driver.findElement(addWishListBtu).click();
+        }
+        public String wishItemQuantity (){
+            return driver.findElement(wishItemQuantity).getText();
+        }
+        public String cardItemQuantity (){
+            return driver.findElement(cardItemQuantity).getText();
+        }
+        public WishListPage clickwishListPageBut(){
+            driver.findElement(wishlistPageBtu).click();
             return new WishListPage(driver);
         }
-        public void SelectProcess(){
-            WebElement process = driver.findElement(processorList);
-            Select select = new Select(process);
-            select.selectByValue("2");
+        public ShoppingPage clickCardPageBut(){
+            driver.findElement(cardPageButton).click();
+            return new ShoppingPage(driver);
         }
+
+
+
+
 
 }

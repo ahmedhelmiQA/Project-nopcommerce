@@ -26,7 +26,7 @@ private RegisterPage registerPage;
     homePage = new HomePage(driver);
     registerPage = homePage.clickRegisterBtu();
     registerPage.fillRegisterInfoFemale("sara","mohamed","26","12","2021",
-            "sar@vvr.cm","123456","123456");
+            "test@test.com","123456","123456");
     registerPage.ClickRegisterBtu();
     registerPage.clickContinueBtu();
     String expectedResult = "Welcome to our store";

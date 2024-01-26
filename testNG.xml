@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="nopcommerce">
+<suite name="first test suite">
     <test name="test">
         <classes>
             <class name="RegisterTest">
@@ -23,7 +23,11 @@
                     <include name="testAddingItemAndCheckingCount"/>
                 </methods>
             </class>
-
-        </classes>
+            <class name="WishListTest">
+                <methods>
+                    <include name="testAddItemAndCheckWishListPage"/>
+                </methods>
+            </class>
+            </classes>
     </test>
 </suite>
