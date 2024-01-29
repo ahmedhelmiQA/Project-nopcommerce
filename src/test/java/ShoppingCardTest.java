@@ -7,7 +7,7 @@ public class ShoppingCardTest extends TestBase {
   protected HomePage homePage;
   protected ProductesPage productesPage;
 
-    @Test
+    @Test (groups ={ "Female-user","Male-user"})
     public void testAddingItemAndCheckingCount() throws InterruptedException {
      homePage = new HomePage(driver);
      productesPage = homePage.clickproductTitle();

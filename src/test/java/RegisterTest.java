@@ -6,12 +6,12 @@ public class RegisterTest extends TestBase {
 private HomePage homePage;
 private RegisterPage registerPage;
 
-@Test
+@Test (groups = "Male-user")
     public void RegisterMaleTest(){
     homePage = new HomePage(driver);
   registerPage = homePage.clickRegisterBtu();
   registerPage.fillRegisterInfoMale("ahmed","helmi","13","1","1980",
-          "dex1@vav.net","123456789","123456");
+          "dex10@sav.net","123456789","123456");
   registerPage.ClickRegisterBtu();
   registerPage.clickContinueBtu();
   String expectedResult = "Welcome to our store";
@@ -21,12 +21,12 @@ private RegisterPage registerPage;
 
 }
 
-@Test
+@Test (groups = "Female-user")
     public void RegisterFemaleTest(){
     homePage = new HomePage(driver);
     registerPage = homePage.clickRegisterBtu();
     registerPage.fillRegisterInfoFemale("sara","mohamed","26","12","2021",
-            "test@test.com","123456","123456");
+            "vma3l@tet.com","123456","123456");
     registerPage.ClickRegisterBtu();
     registerPage.clickContinueBtu();
     String expectedResult = "Welcome to our store";

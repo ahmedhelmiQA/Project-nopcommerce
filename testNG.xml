@@ -2,32 +2,22 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="first test suite">
     <test name="test">
-        <classes>
-            <class name="RegisterTest">
-                <methods>
-                    <include name="RegisterFemaleTest"/>
-                </methods>
-            </class>
-            <class name="LoginTest">
-                <methods>
-                    <include name="LoginFelmalTest"/>
-                </methods>
-            </class>
-            <class name="SearchTest">
-                <methods>
-                    <include name="SearchTestContianeWord"/>
-                </methods>
-            </class>
-            <class name="ShoppingCardTest">
-                <methods>
-                    <include name="testAddingItemAndCheckingCount"/>
-                </methods>
-            </class>
-            <class name="WishListTest">
-                <methods>
-                    <include name="testAddItemAndCheckWishListPage"/>
-                </methods>
-            </class>
-            </classes>
+        <groups>
+            <run>
+                <include name="Female-user"/>
+            </run>
+        </groups>
     </test>
+
+    <test name="4">
+        <classes>
+            <class name="RegisterTest"/>
+            <class name="LoginTest"/>
+            <class name="SearchTest"/>
+            <class name="ShoppingCardTest"/>
+            <class name="WishListTest"/>
+            <class name="FollowUsTest"/>
+        </classes>
+    </test>
+
 </suite>

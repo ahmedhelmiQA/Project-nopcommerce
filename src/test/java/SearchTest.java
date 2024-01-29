@@ -7,7 +7,7 @@ public class SearchTest extends TestBase {
     protected HomePage homePage;
     protected SearchPage searchPage;
 
-    @Test
+    @Test (groups = {"Female-user","Male-user"})
     public void SearchTestContianeWord(){
         String search = "Build";
         homePage = new HomePage(driver);

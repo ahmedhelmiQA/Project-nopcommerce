@@ -9,6 +9,8 @@ public class FollowUsTest extends TestBase {
 
     @Test
     public void followUsTest(){
+var parint = driver.getWindowHandle();
+        System.out.println(parint);
 
 
     }

@@ -16,7 +16,7 @@ public class WishListTest extends TestBase {
 //      Assert.assertTrue(SuccessMsg.contains("The product has been added to your"));
 
     }
-@Test
+@Test (groups = {"Female-user","Male-user"})
     public void testAddItemAndCheckWishListPage() throws InterruptedException {
     homePage = new HomePage(driver);
     var productPage = homePage.clickproductTitle();
