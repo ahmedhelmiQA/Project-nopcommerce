@@ -7,4 +7,5 @@ public class FollowUsPage {
     public FollowUsPage(WebDriver driver) {
         this.driver = driver;
     }
+
 }

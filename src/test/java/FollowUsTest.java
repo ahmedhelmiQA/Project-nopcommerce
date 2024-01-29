@@ -1,11 +1,11 @@
 
-import Pages.FollowUs.FollowUs;
+import Pages.FollowUs.FollowUsPage;
 import org.testng.annotations.Test;
 
 public class FollowUsTest extends TestBase {
 
     protected HomePage homePage;
-    protected FollowUs followUs;
+    protected FollowUsPage followUsPage;
 
     @Test
     public void followUsTest(){

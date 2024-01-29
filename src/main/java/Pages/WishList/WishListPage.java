@@ -31,7 +31,7 @@ public class WishListPage  {
         return driver.findElement(itemPrice).getText();
     }
     public String QuantityNumber(){
-        return driver.findElement(quantityNumber).getText();
+        return driver.findElement(quantityNumber).getAttribute("value");
     }
     public String totalPrice(){
         return driver.findElement(totalPrice).getText();
