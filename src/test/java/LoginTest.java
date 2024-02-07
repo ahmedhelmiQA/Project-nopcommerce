@@ -1,5 +1,6 @@
 import Pages.Login.LoginPage;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
 public class LoginTest extends TestBase {
@@ -11,7 +12,7 @@ public class LoginTest extends TestBase {
     public void loginMaleTest(){
         homePage = new HomePage(driver);
         loginPage = homePage.clickLoginBtu();
-        loginPage.fillLoginInfo("dex10@sav.net","123456");
+        loginPage.fillLoginInfo("dex10@vav.net","123456");
         loginPage.clickLoginBtu();
         String expectedResult = "Welcome to our store";
         String actualResult = loginPage.getMessageWel();
@@ -22,10 +23,12 @@ public class LoginTest extends TestBase {
     public void LoginFelmalTest(){
         homePage = new HomePage(driver);
         loginPage= homePage.clickLoginBtu();
-        loginPage.fillLoginInfo("vmal@tet.com", "123456");
+        loginPage.fillLoginInfo("test@net.net", "123456");
         loginPage.clickLoginBtu();
         String expectedResult ="Welcome ";
         String actualResult = loginPage.getMessageWel();
         Assert.assertTrue(actualResult.contains(expectedResult));
     }
+
+
 }

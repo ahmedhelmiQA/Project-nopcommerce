@@ -1,5 +1,6 @@
 import Pages.Search.SearchPage;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
 public class SearchTest extends TestBase {
@@ -16,5 +17,6 @@ public class SearchTest extends TestBase {
         searchPage = new SearchPage(driver);
        searchPage.ProductDetails();
     }
+
 
 }

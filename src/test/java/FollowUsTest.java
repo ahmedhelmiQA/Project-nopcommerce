@@ -1,5 +1,6 @@
 
 import Pages.FollowUs.FollowUsPage;
+import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
 public class FollowUsTest extends TestBase {
@@ -14,5 +15,9 @@ var parint = driver.getWindowHandle();
 
 
     }
-}
+
+
+
+
+   }
 
