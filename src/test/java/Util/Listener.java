@@ -1,5 +1,6 @@
 package Util;
 
+import com.sun.net.httpserver.Authenticator;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -8,6 +9,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import javax.xml.transform.Result;
 import java.io.File;
 import java.io.IOException;
 
@@ -15,22 +17,22 @@ public class Listener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        ITestListener.super.onTestStart(result);
+        System.out.println(Result.getName()+" test case started");
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        ITestListener.super.onTestSuccess(result);
+        System.out.println("The name of the testcase passed is :"+ Result.getName());
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        ITestListener.super.onTestFailure(result);
+        System.out.println("The name of the testcase failed is :"+Result.getName());
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        ITestListener.super.onTestSkipped(result);
+        System.out.println("The name of the testcase Skipped is :"+Result.getName());
     }
 
     @Override
