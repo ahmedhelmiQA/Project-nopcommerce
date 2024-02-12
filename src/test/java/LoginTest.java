@@ -23,7 +23,7 @@ public class LoginTest extends TestBase {
     public void LoginFelmalTest(){
         homePage = new HomePage(driver);
         loginPage= homePage.clickLoginBtu();
-        loginPage.fillLoginInfo("test@net.net", "123456");
+        loginPage.fillLoginInfo("test@noot.net", "123456");
         loginPage.clickLoginBtu();
         String expectedResult ="Welcome ";
         String actualResult = loginPage.getMessageWel();

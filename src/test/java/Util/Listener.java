@@ -23,33 +23,11 @@ public class Listener implements ITestListener {
         ITestListener.super.onTestSuccess(result);
     }
 
-    WebDriver driver = null;
-    String filePath = "D:\\testing\\Automation project\\Project-nopcommerce\\reports";
     @Override
     public void onTestFailure(ITestResult result) {
-        if (result.getStatus() == ITestResult.FAILURE) { // Check if the test has failed
-            System.out.println("***** Error " + result.getName() + " test has failed *****");
-            String methodName = result.getName().toString().trim();
-            ITestContext context = result.getTestContext();
-            driver = (WebDriver) context.getAttribute("driver"); // Assign the WebDriver instance
-            takeScreenShot(methodName, driver);
-        }
+        ITestListener.super.onTestFailure(result);
     }
 
-    public void takeScreenShot(String methodName, WebDriver driver) {
-        if (driver != null) {
-            File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            // The below method will save the screen shot in d drive with the test method name
-            try {
-                FileUtils.copyFile(scrFile, new File(filePath + methodName + ".png"));
-                System.out.println("***Placed screen shot in " + filePath + " ***");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            System.out.println("WebDriver instance is null. Cannot capture screenshot.");
-        }
-    }
     @Override
     public void onTestSkipped(ITestResult result) {
         ITestListener.super.onTestSkipped(result);
@@ -73,5 +51,9 @@ public class Listener implements ITestListener {
     @Override
     public void onFinish(ITestContext context) {
         ITestListener.super.onFinish(context);
+
+
     }
 }
+
+

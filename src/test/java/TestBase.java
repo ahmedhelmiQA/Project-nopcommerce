@@ -1,7 +1,9 @@
+import Util.Helper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
@@ -21,10 +23,16 @@ public  class TestBase {
     driver.navigate().to("https://demo.nopcommerce.com");
     homePage = new HomePage(driver);
      }
-    @AfterClass
-    public void Quite(){
-        driver.quit();
-    }
+     @AfterMethod
+     public void screenshotonFailure(ITestResult result) {
+         if (result.getStatus() == ITestResult.FAILURE) {
+             System.out.println("Failed !");
+             System.out.println("Taking Screenshot....");
+             Helper.captureScreenshot(driver, result.getName());
+         }
+
+            driver.quit();
+     }
 
 
 }

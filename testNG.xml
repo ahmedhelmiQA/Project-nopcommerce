@@ -36,6 +36,7 @@
                    <include name="followUsTest"/>
                </methods>
            </class>
+
        </classes>
    </test>
 
